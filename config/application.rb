@@ -8,8 +8,6 @@ require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
 # require "action_mailer/railtie"
-require "action_mailbox/engine"
-require "action_text/engine"
 require "action_view/railtie"
 # require "action_cable/engine"
 require "sprockets/railtie"
@@ -22,7 +20,7 @@ Bundler.require(*Rails.groups)
 module Asagao
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -35,6 +33,10 @@ module Asagao
     config.time_zone = "Tokyo"
     config.i18n.default_locale = :ja
 
-    config.action_controller.permit_all_parameters = true
+    config.action_controller.permit_all_parameters = false
+
+    config.exceptions_app = ->(env) do
+      ErrorsController.action(:show).call(env)
+    end
   end
 end
