@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
+gem 'mini_magick', '~> 4.8'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -30,6 +31,8 @@ gem 'email_validator', '~> 1.6'
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'jquery-rails'
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
