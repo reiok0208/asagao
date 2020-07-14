@@ -32,6 +32,7 @@ gem 'rails-i18n'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'jquery-rails'
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
